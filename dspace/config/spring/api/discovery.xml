@@ -96,14 +96,16 @@
         <property name="sidebarFacets">
             <list>
                 <ref bean="searchFilterAuthor" />
+                <ref bean="searchFilterType" />
                 <ref bean="searchFilterSubject" />
-                <ref bean="searchFilterIssued" />
+                <ref bean="searchFilterIssued" /> 
             </list>
         </property>
         <!--The search filters which can be used on the discovery search page-->
         <property name="searchFilters">
             <list>
                 <ref bean="searchFilterTitle" />
+                <ref bean="searchFilterType" />
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
                 <ref bean="searchFilterIssued" />
@@ -200,6 +202,7 @@
             <list>
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
+                <ref bean="searchFilterType" />
                 <ref bean="searchFilterIssued" />
             </list>
         </property>
@@ -209,6 +212,7 @@
                 <ref bean="searchFilterTitle" />
                 <ref bean="searchFilterAuthor" />
                 <ref bean="searchFilterSubject" />
+                <ref bean="searchFilterType" />
                 <ref bean="searchFilterIssued" />
             </list>
         </property>
@@ -283,9 +287,21 @@
                 <value>dc.creator</value>
             </list>
         </property>
-        <property name="facetLimit" value="10"/>
+        <property name="facetLimit" value="7"/>
         <property name="sortOrder" value="COUNT"/>
     </bean>
+    
+    <bean id="searchFilterType" class="org.dspace.discovery.configuration.DiscoverySearchFilterFacet">
+       <property name="indexFieldName" value="type"/>
+       <property name="metadataFields">
+           <list>
+               <value>dc.type.spa</value>
+           </list>
+       </property>
+       <property name="type" value="text"/>
+       <property name="facetLimit" value="7"/>
+       <property name="sortOrder" value="COUNT"/>
+   </bean>
 
     <bean id="searchFilterSubject" class="org.dspace.discovery.configuration.HierarchicalSidebarFacetConfiguration">
         <property name="indexFieldName" value="subject"/>
@@ -294,7 +310,7 @@
                 <value>dc.subject.*</value>
             </list>
         </property>
-        <property name="facetLimit" value="10"/>
+        <property name="facetLimit" value="7"/>
         <property name="sortOrder" value="COUNT"/>
         <property name="splitter" value="::"/>
     </bean>
@@ -307,6 +323,7 @@
             </list>
         </property>
         <property name="type" value="date"/>
+        <property name="facetLimit" value="7"/>
         <property name="sortOrder" value="VALUE"/>
     </bean>
 
