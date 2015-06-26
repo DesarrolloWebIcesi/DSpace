@@ -332,13 +332,23 @@
 	<bean id="tsvDataLoader" class="gr.ekt.bteio.loaders.CSVDataLoader">
 		<property name="fieldMap">
 			<map>
-				<entry key="0" value="title" />
+				<!--<entry key="0" value="title" />
 				<entry key="1" value="authors" />
 				<entry key="2" value="issued" />
 				<entry key="3" value="journal" />
 				<entry key="4" value="abstract" />
 				<entry key="5" value="jissn" />
-				<entry key="6" value="subtype" />
+				<entry key="6" value="subtype" />-->
+                                <entry key="0" value="authors" />
+				<entry key="1" value="title" />
+				<entry key="2" value="issued" />
+                                <entry key="3" value="url" />
+                                <entry key="4" value="abstract" />
+				<entry key="5" value="keywords" />
+                                <entry key="5" value="allkeywords" />
+                                <entry key="6" value="publisher" />
+                                <entry key="8" value="language" />
+                                <entry key="9" value="subtype" />
 			</map>
 		</property>
 		<!-- This makes the CSV data loader able to load TSV data -->
