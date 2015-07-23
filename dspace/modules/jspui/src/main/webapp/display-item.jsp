@@ -255,6 +255,15 @@
 <%
     } else {
 %>
+ 
+    <p class="submitFormHelp alert alert-info"><fmt:message key="jsp.display-item.text3"/> <a href="http://creativecommons.org/licenses/by/4.0/"><fmt:message key="jsp.display-item.license"/></a>
+    <a href="http://creativecommons.org/licenses/by/4.0/"><img src="<%= request.getContextPath() %>/image/cc-somerights.gif" border="0" alt="Creative Commons" style="margin-top: -5px;" class="pull-right"/></a>
+    </p>
+
+  <!--  <p class="submitFormHelp alert alert-info"><fmt:message key="jsp.display-item.copyright"/></p>  -->
+<%
+    } 
+%>
 
     <dspace:sidebar>
 <%
