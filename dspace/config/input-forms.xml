@@ -322,7 +322,7 @@
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Tipo (BDCOL)*</label>
+                    <label>Tipo (OpenAIRE)*</label>
                     <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint> Seleccione el(los) tipo(s) de contenido del ítem. Para seleccionar más de un tipo, mantenga presionada 
                         la tecla "CTRL" o "Shift" mientras selecciona los tipos con el ratón.
@@ -597,6 +597,17 @@
                 
                 <field>
                     <dc-schema>dc</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Audiencia</label>
+                    <input-type value-pairs-name="common_audience">dropdown</input-type>
+                    <hint>Seleccione el publico al cual va dirigido</hint>
+                    <required>Debe ingresar la audiencia</required>                    
+                </field>
+                
+                <field>
+                    <dc-schema>dc</dc-schema>
                     <dc-element>relation</dc-element>
                     <dc-qualifier>ispartofseries</dc-qualifier>
                     <repeatable>true</repeatable>
@@ -616,14 +627,14 @@
                     <hint>Ingrese los elementos relacionados con este ítem y la forma en que se relacionan.</hint>
                     <required></required>
                 </field>
-                
+               
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>relation</dc-element>
-                    <dc-qualifier>hasversion</dc-qualifier>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>hasVersion</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Versión</label>
-                    <input-type value-pairs-name="common_relation_versions">dropdown</input-type>
+                    <input-type value-pairs-name="common_type_version">dropdown</input-type>
                     <hint>Ingrese la versión del documento</hint>
                     <required>Debe ingresar la versión del ítem</required>
                 </field>
@@ -739,7 +750,7 @@
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Tipo (BDCOL)*</label>
+                    <label>Tipo (OpenAIRE)*</label>
                     <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint> Seleccione el(los) tipo(s) de contenido del ítem. Para seleccionar más de un tipo, mantenga presionada 
                         la tecla "CTRL" o "Shift" mientras selecciona los tipos con el ratón.
@@ -968,6 +979,17 @@
                 
                 <field>
                     <dc-schema>dc</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Audiencia</label>
+                    <input-type value-pairs-name="common_audience">dropdown</input-type>
+                    <hint>Seleccione el publico al cual va dirigido</hint>
+                    <required>Debe ingresar la audiencia</required>                    
+                </field>
+                
+                <field>
+                    <dc-schema>dc</dc-schema>
                     <dc-element>relation</dc-element>
                     <dc-qualifier>ispartofseries</dc-qualifier>
                     <repeatable>true</repeatable>
@@ -987,14 +1009,14 @@
                     <hint>Ingrese los elementos relacionados con este ítem y la forma en que se relacionan.</hint>
                     <required></required>
                 </field>
-                
+               
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>relation</dc-element>
-                    <dc-qualifier>hasversion</dc-qualifier>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>hasVersion</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Versión</label>
-                    <input-type value-pairs-name="common_relation_versions">dropdown</input-type>
+                    <input-type value-pairs-name="common_type_version">dropdown</input-type>
                     <hint>Ingrese la versión del documento</hint>
                     <required>Debe ingresar la versión del ítem</required>
                 </field>
@@ -1087,9 +1109,10 @@
                     <dc-qualifier>role</dc-qualifier>
                     <repeatable>true</repeatable>
                     <label>Rol del Colaborador(es)*</label>
-                    <input-type>onebox</input-type>
-                    <hint>Ingrese los roles de los colaboradores de este ítem</hint>
-                    <required>Debe ingresar el rol de almenos uno de los colaboradores de este ítem</required>
+                    <!--<input-type>onebox</input-type>-->
+		    <input-type value-pairs-name="common_contributor_role">dropdown</input-type>
+                    <hint>Seleccione los roles de los colaboradores de este ítem</hint>
+                    <required>Debe ingresar el rol de al menos uno de los colaboradores de este ítem</required>
                 </field>
                 
                 <field>
@@ -1119,7 +1142,7 @@
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Tipo (BDCOL)*</label>
+                    <label>Tipo (OpenAIRE)*</label>
                     <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint> Seleccione el(los) tipo(s) de contenido del ítem. Para seleccionar más de un tipo, mantenga presionada 
                         la tecla "CTRL" o "Shift" mientras selecciona los tipos con el ratón.
@@ -1158,8 +1181,8 @@
                     <repeatable>true</repeatable>
                     <label>Formato *</label>
                     <input-type>onebox</input-type>
-                    <hint> Ingrese el fortato del archivo puede usar la siguiente url como ayuda: &lt;a href="http://www.iana.org/assignments/media-types/" target="_blank"&gt; http://www.iana.org/assignments/media-types/ &lt;/a&gt;</hint>
-                    <required>Debe ingresar el fortato del archivo</required>
+                    <hint> Ingrese el formato del archivo puede usar la siguiente url como ayuda: &lt;a href="http://www.iana.org/assignments/media-types/" target="_blank"&gt; http://www.iana.org/assignments/media-types/ &lt;/a&gt;</hint>
+                    <required>Debe ingresar el formato del archivo</required>
                 </field>       
                 
                 <field>
@@ -1369,6 +1392,18 @@
                     <hint>Ingrese el departamento al que pertenece el autor ítem</hint>
                     <required>Debe ingresar el departamento</required>                    
                 </field>
+				
+				
+		<field>
+                    <dc-schema>dc</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Audiencia</label>
+                    <input-type value-pairs-name="common_audience">dropdown</input-type>
+                    <hint>Seleccione el publico al cual va dirigido</hint>
+                    <required>Debe ingresar la audiencia</required>                    
+                </field>
                 
                 <field>
                     <dc-schema>dc</dc-schema>
@@ -1391,14 +1426,14 @@
                     <hint>Ingrese los elementos relacionados con este ítem y la forma en que se relacionan.</hint>
                     <required></required>
                 </field>
-                
+               
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>relation</dc-element>
-                    <dc-qualifier>hasversion</dc-qualifier>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>hasVersion</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Versión</label>
-                    <input-type value-pairs-name="common_relation_versions">dropdown</input-type>
+                    <input-type value-pairs-name="common_type_version">dropdown</input-type>
                     <hint>Ingrese la versión del documento</hint>
                     <required>Debe ingresar la versión del ítem</required>
                 </field>
@@ -1474,8 +1509,8 @@
                     <required></required>
                 </field>
                 
-                <!--ffceballos -->				
-				<field>
+		<!--ffceballos -->				
+	        <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>title</dc-element>
                     <dc-qualifier></dc-qualifier>
@@ -1496,15 +1531,15 @@
                     <hint>Si el ítem tiene títulos alternativos, por favor escríbalos.</hint>
                     <required></required>
                 </field>				
-                <!--fin ffceballos -->
-                
-                
+		<!--fin ffceballos -->
+				
+				
                 <field>
                     <dc-schema>dc</dc-schema>
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Tipo (BDCOL)*</label>
+                    <label>Tipo (OpenAIRE)*</label>
                     <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint> Seleccione el(los) tipo(s) de contenido del ítem. Para seleccionar más de un tipo, mantenga presionada 
                         la tecla "CTRL" o "Shift" mientras selecciona los tipos con el ratón.
@@ -1757,6 +1792,17 @@
                 
                 <field>
                     <dc-schema>dc</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Audiencia</label>
+                    <input-type value-pairs-name="common_audience">dropdown</input-type>
+                    <hint>Seleccione el publico al cual va dirigido</hint>
+                    <required>Debe ingresar la audiencia</required>                    
+                </field>
+                
+                <field>
+                    <dc-schema>dc</dc-schema>
                     <dc-element>relation</dc-element>
                     <dc-qualifier>ispartofseries</dc-qualifier>
                     <repeatable>true</repeatable>
@@ -1776,14 +1822,14 @@
                     <hint>Ingrese los elementos relacionados con este ítem y la forma en que se relacionan.</hint>
                     <required></required>
                 </field>
-                
+               
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>relation</dc-element>
-                    <dc-qualifier>hasversion</dc-qualifier>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>hasVersion</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Versión</label>
-                    <input-type value-pairs-name="common_relation_versions">dropdown</input-type>
+                    <input-type value-pairs-name="common_type_version">dropdown</input-type>
                     <hint>Ingrese la versión del documento</hint>
                     <required>Debe ingresar la versión del ítem</required>
                 </field>
@@ -1886,7 +1932,7 @@
                     <dc-element>type</dc-element>
                     <dc-qualifier></dc-qualifier>
                     <repeatable>true</repeatable>
-                    <label>Tipo (BDCOL)*</label>
+                    <label>Tipo (OpenAIRE)*</label>
                     <input-type value-pairs-name="common_types">dropdown</input-type>
                     <hint> Seleccione el(los) tipo(s) de contenido del ítem. Para seleccionar más de un tipo, mantenga presionada 
                         la tecla "CTRL" o "Shift" mientras selecciona los tipos con el ratón.
@@ -2128,6 +2174,17 @@
                 
                 <field>
                     <dc-schema>dc</dc-schema>
+                    <dc-element>audience</dc-element>
+                    <dc-qualifier></dc-qualifier>
+                    <repeatable>false</repeatable>
+                    <label>Audiencia</label>
+                    <input-type value-pairs-name="common_audience">dropdown</input-type>
+                    <hint>Seleccione el publico al cual va dirigido</hint>
+                    <required>Debe ingresar la audiencia</required>                    
+                </field>
+                
+                <field>
+                    <dc-schema>dc</dc-schema>
                     <dc-element>relation</dc-element>
                     <dc-qualifier>ispartofseries</dc-qualifier>
                     <repeatable>true</repeatable>
@@ -2150,11 +2207,11 @@
                 
                 <field>
                     <dc-schema>dc</dc-schema>
-                    <dc-element>relation</dc-element>
-                    <dc-qualifier>hasversion</dc-qualifier>
+                    <dc-element>type</dc-element>
+                    <dc-qualifier>hasVersion</dc-qualifier>
                     <repeatable>false</repeatable>
                     <label>Versión</label>
-                    <input-type value-pairs-name="common_relation_versions">dropdown</input-type>
+                    <input-type value-pairs-name="common_type_version">dropdown</input-type>
                     <hint>Ingrese la versión del documento</hint>
                     <required>Debe ingresar la versión del ítem</required>
                 </field>
@@ -2447,129 +2504,78 @@
 
         <!-- type possible values -->
         <value-pairs value-pairs-name="common_types" dc-term="type">
+         
             <pair>
-                <displayed-value>Anotación jurisprudencial</displayed-value>
-                <stored-value>annotation</stored-value>
+                <displayed-value>Anotación</displayed-value>
+                <stored-value>info:eu-repo/semantics/annotation</stored-value>
             </pair>
             <pair>
                 <displayed-value>Artículo</displayed-value>
-                <stored-value>article</stored-value>
+                <stored-value>info:eu-repo/semantics/article</stored-value>
             </pair>                        
-            <pair>
+            <!--<pair>
                 <displayed-value>Capítulo de libro</displayed-value>
                 <stored-value>bookChapter</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Cartel de conferencia</displayed-value>
-                <stored-value>conferencePoster</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Dataset</displayed-value>
-                <stored-value>dataset</stored-value>
-            </pair>
+            </pair>-->
             <pair>
                 <displayed-value>Diario</displayed-value>
-                <stored-value>newspaper</stored-value>
+                <stored-value>info:eu-repo/semantics/contributionToPeriodical</stored-value>
             </pair>
-            <pair>
-                <displayed-value>Documento de conferencia</displayed-value>
-                <stored-value>conferencePaper</stored-value>
-            </pair>            
             <pair>
                 <displayed-value>Documento de trabajo</displayed-value>
-                <stored-value>workingPaper</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Documento institucional</displayed-value>
-                <stored-value>institutionalDocument</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Documento histórico</displayed-value>
-                <stored-value>historicalDocument</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Imagen</displayed-value>
-                <stored-value>image</stored-value>
+                <stored-value>info:eu-repo/semantics/workingPaper</stored-value>
             </pair>
             <pair>
                 <displayed-value>Libro</displayed-value>
-                <stored-value>book</stored-value>
+                <stored-value>info:eu-repo/semantics/book</stored-value>
             </pair>
             <pair>
-                <displayed-value>Mapa</displayed-value>
-                <stored-value>map</stored-value>
+                <displayed-value>Otro</displayed-value>
+                <stored-value>info:eu-repo/semantics/other</stored-value>
             </pair>
             <pair>
-                <displayed-value>Objeto de aprendizaje (LOM)</displayed-value>
-                <stored-value>learningObject</stored-value>
-            </pair>
+                <displayed-value>Objeto de conferencia</displayed-value>
+                <stored-value>info:eu-repo/semantics/conferenceObject</stored-value>
+            </pair>            
             <pair>
                 <displayed-value>Parte de libro</displayed-value>
-                <stored-value>bookPart</stored-value>
+                <stored-value>info:eu-repo/semantics/bookPart</stored-value>
             </pair>
             <pair>
                 <displayed-value>Patente</displayed-value>
-                <stored-value>patent</stored-value>
+                <stored-value>info:eu-repo/semantics/patent</stored-value>
             </pair>
             <pair>
                 <displayed-value>Pre-impresión</displayed-value>
-                <stored-value>preprint</stored-value>
-            </pair> 
-            <pair>
-                <displayed-value>Presentación</displayed-value>
-                <stored-value>presentation</stored-value>
+                <stored-value>info:eu-repo/semantics/preprint</stored-value>
             </pair>     
             <pair>
                 <displayed-value>Reporte</displayed-value>
-                <stored-value>report</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Reporte técnico</displayed-value>
-                <stored-value>technicalReport</stored-value>
+                <stored-value>info:eu-repo/semantics/report</stored-value>
             </pair>
             <pair>
                 <displayed-value>Revisión</displayed-value>
-                <stored-value>review</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Revista</displayed-value>
-                <stored-value>journal</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Simulación</displayed-value>
-                <stored-value>simulation</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Sonido</displayed-value>
-                <stored-value>sound</stored-value>
+                <stored-value>info:eu-repo/semantics/review</stored-value>
             </pair>
             <pair>
                 <displayed-value>Tesis doctoral</displayed-value>
-                <stored-value>doctoralThesis</stored-value>
+                <stored-value>info:eu-repo/semantics/doctoralThesis</stored-value>
             </pair>
             <pair>
                 <displayed-value>Tesis de maestría</displayed-value>
-                <stored-value>masterThesis</stored-value>
+                <stored-value>info:eu-repo/semantics/masterThesis</stored-value>
             </pair>
             <pair>
-                <displayed-value>Trabajo de Grado</displayed-value>
-                <stored-value>bachelorThesis</stored-value>
-            </pair>
-            <pair>
-                <displayed-value>Video</displayed-value>
-                <stored-value>video</stored-value>
-            </pair>     
-            <pair>
-                <displayed-value>Otro</displayed-value>
-                <stored-value>other</stored-value>
-            </pair>
+                <displayed-value>Trabajo de grado</displayed-value>
+                <stored-value>info:eu-repo/semantics/bachelorThesis</stored-value>
+            </pair>   
         </value-pairs>
         
         <!-- type.spa possible values -->
         <value-pairs value-pairs-name="common_types_spa" dc-term="type.spa">
             <pair>
-                <displayed-value>Anotación jurisprudencial</displayed-value>
-                <stored-value>Anotación jurisprudencial</stored-value>
+                <displayed-value>Anotación</displayed-value>
+                <stored-value>Anotación</stored-value>
             </pair>
             <pair>
                 <displayed-value>Artículo</displayed-value>
@@ -2643,10 +2649,10 @@
                 <displayed-value>Reporte</displayed-value>
                 <stored-value>Reporte</stored-value>
             </pair>
-            <pair>
+            <!--<pair>
                 <displayed-value>Reporte técnico</displayed-value>
                 <stored-value>Reporte técnico</stored-value>
-            </pair>
+            </pair>-->
             <pair>
                 <displayed-value>Revisión</displayed-value>
                 <stored-value>Revisión</stored-value>
@@ -2683,6 +2689,7 @@
                 <displayed-value>Otro</displayed-value>
                 <stored-value>Otro</stored-value>
             </pair>
+           
         </value-pairs>
 
         <!-- default language order: (from dspace 1.2.1)
@@ -2734,43 +2741,67 @@
         <value-pairs value-pairs-name="common_access_types" dc-term="rights.accessRights">
             <pair>
                 <displayed-value>Acceso Abierto</displayed-value>
-                <stored-value>openAccess</stored-value>
+                <stored-value>info:eu-repo/semantics/openAccess</stored-value>
             </pair>
             <pair>
                 <displayed-value>Restringido</displayed-value>
-                <stored-value>RestrictedAccess</stored-value>
+                <stored-value>info:eu-repo/semantics/restrictedAccess</stored-value>
             </pair> 
             <pair>
                 <displayed-value>Embargo</displayed-value>
-                <stored-value>embargoedAccess</stored-value>
+                <stored-value>info:eu-repo/semantics/embargoedAccess</stored-value>
             </pair> 
             <pair>
                 <displayed-value>Cerrado</displayed-value>
-                <stored-value>ClosedAccess</stored-value>
+                <stored-value>info:eu-repo/semantics/closedAccess</stored-value>
             </pair> 
         </value-pairs>
         
         <!-- relation.hasversion possible values -->
-        <value-pairs value-pairs-name="common_relation_versions" dc-term="relation.hasversion">
+        <!--<value-pairs value-pairs-name="common_relation_versions" dc-term="relation.hasversion">
             <pair>
                 <displayed-value>Trabajo en curso</displayed-value>
-                <stored-value>draft</stored-value>
+                <stored-value>info:eu-repo/semantics/draft</stored-value>
             </pair>
             <pair>
                 <displayed-value>Enviado a una revista para revisión por pares</displayed-value>
-                <stored-value>submittedVersion</stored-value>
+                <stored-value>info:eu-repo/semantics/submittedVersion</stored-value>
             </pair> 
             <pair>
                 <displayed-value>Aceptada para publicación</displayed-value>
-                <stored-value>acceptedVersion</stored-value>
+                <stored-value>info:eu-repo/semantics/acceptedVersion</stored-value>
             </pair> 
             <pair>
                 <displayed-value>Publicada</displayed-value>
-                <stored-value>publishedVersion</stored-value>
+                <stored-value>info:eu-repo/semantics/publishedVersion</stored-value>
             </pair>
             <pair>
                 <displayed-value>Actualizada desde la publicación</displayed-value>
-                <stored-value>updatedVersion</stored-value>
+                <stored-value>info:eu-repo/semantics/updatedVersion</stored-value>
+            </pair>            
+        </value-pairs>-->
+        
+        <!-- type.hasversion possible values -->
+        <value-pairs value-pairs-name="common_type_version" dc-term="type.hasversion">
+            <pair>
+                <displayed-value>Trabajo en curso</displayed-value>
+                <stored-value>info:eu-repo/semantics/draft</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Enviado a una revista para revisión por pares</displayed-value>
+                <stored-value>info:eu-repo/semantics/submittedVersion</stored-value>
+            </pair> 
+            <pair>
+                <displayed-value>Aceptada para publicación</displayed-value>
+                <stored-value>info:eu-repo/semantics/acceptedVersion</stored-value>
+            </pair> 
+            <pair>
+                <displayed-value>Publicada</displayed-value>
+                <stored-value>info:eu-repo/semantics/publishedVersion</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Actualizada desde la publicación</displayed-value>
+                <stored-value>info:eu-repo/semantics/updatedVersion</stored-value>
             </pair>            
         </value-pairs>
         
@@ -2840,6 +2871,47 @@
                 <displayed-value>Facultad de Ciencias de la Salud</displayed-value>
                 <stored-value>Facultad de Ciencias de la Salud</stored-value>
             </pair>
+        </value-pairs>
+		
+		<!--Possible contributor.role -->
+		<value-pairs value-pairs-name="common_contributor_role" dc-term="contributor.role">
+            <pair>
+                <displayed-value>Editor</displayed-value>
+                <stored-value>Editor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Asesor/Director</displayed-value>
+                <stored-value>Asesor/Director</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Jurado/Lector</displayed-value>
+                <stored-value>Jurado/Lector</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Compilador</displayed-value>
+                <stored-value>Compilador</stored-value>
+            </pair>
+        </value-pairs>
+		
+		<!--Possible audience -->
+		<value-pairs value-pairs-name="common_audience" dc-term="audience">
+            <pair>
+                <displayed-value>Comunidad Universidad Icesi - Estudiantes</displayed-value>
+                <stored-value>Editor</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Comunidad Universidad Icesi - Profesores</displayed-value>
+                <stored-value>Comunidad Universidad Icesi - Profesores</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Comunidad Universidad Icesi - Investigadores</displayed-value>
+                <stored-value>Comunidad Universidad Icesi - Investigadores</stored-value>
+            </pair>
+            <pair>
+                <displayed-value>Todo Público</displayed-value>
+                <stored-value>Todo Público</stored-value>
+            </pair>
+
         </value-pairs>
     </form-value-pairs>
 
