@@ -28,6 +28,7 @@ import org.dspace.authorize.AuthorizeException;
 import org.dspace.authorize.AuthorizeManager;
 import org.dspace.content.Collection;
 import org.dspace.content.Community;
+import org.dspace.content.DCValue;
 import org.dspace.content.DSpaceObject;
 import org.dspace.content.Item;
 import org.dspace.content.crosswalk.CrosswalkException;
@@ -349,25 +350,58 @@ public class HandleServlet extends DSpaceServlet
         }
 
         String headMetadata = "";
+        
+        /*
+            Autor: Christian David Criollo- cdcriollo
+            Fecha: Agosto 11 2015
+            Descripción: Fix aplicado para que no se genere las etiquetas de citación de Google Scholar para los tipos de
+            documento other
+            */
+            
+            DCValue[] types= item.getMetadata("dc", "type", Item.ANY, Item.ANY);
+            String typevalue= "";
+            
+            if(types.length > 0){
+                String type = types[0].value;
+                String[] typeScholar = type.split("/");
+                //log.info("Tamaño"+ " "+ typeScholar.length);
+
+                if(typeScholar.length > 1){
+                   typevalue= typeScholar[2]; 
+                }
+                else{
+                    typevalue= type;
+                }
+                //log.info("Tipo HandleServlet"+ " "+ typevalue);
+            }
 
         // Produce <meta> elements for header from crosswalk
         try
         {
+            
             List<Element> l = xHTMLHeadCrosswalk.disseminateList(item);
             StringWriter sw = new StringWriter();
-
             XMLOutputter xmlo = new XMLOutputter();
             xmlo.output(new Text("\n"), sw);
-            for (Element e : l)
-            {
-                // FIXME: we unset the Namespace so it's not printed.
-                // This is fairly yucky, but means the same crosswalk should
-                // work for Manakin as well as the JSP-based UI.
-                e.setNamespace(null);
-                xmlo.output(e, sw);
-                xmlo.output(new Text("\n"), sw);
+            
+                
+            if( !typevalue.equalsIgnoreCase("other")){
+                for (Element e : l)
+                {
+                    // FIXME: we unset the Namespace so it's not printed.
+                    // This is fairly yucky, but means the same crosswalk should
+                    // work for Manakin as well as the JSP-based UI.
+                    e.setNamespace(null);
+                    xmlo.output(e, sw);
+                    xmlo.output(new Text("\n"), sw);
+                }
             }
             boolean googleEnabled = ConfigurationManager.getBooleanProperty("google-metadata.enable", false);
+            
+            if( typevalue.equalsIgnoreCase("other")){
+              googleEnabled= false;  
+            }
+            
             if (googleEnabled)
             {
                 // Add Google metadata field names & values
